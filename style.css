@@ -111,7 +111,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  font-size: clamp(2.25rem, 1.125rem + 5.625vw, 4.5rem);
+  font-size: clamp(2.25rem, 0.45rem + 9vw, 4.5rem);
   padding: 16px;
 }
 
@@ -152,7 +152,7 @@ footer a {
   color: #000;
 }
 
-@media only screen and (min-width: 960px) {
+@media (hover: hover) and (pointer: fine) {
   .progress {
     height: 50vh;
   }

@@ -71,6 +71,7 @@ body {
   justify-content: center;
   align-items: baseline;
   color: #fff;
+  mix-blend-mode: difference;
 }
 
 .progress-container .value-number {
@@ -79,7 +80,6 @@ body {
 
 .progress-container .value-symbol {
   font-size: clamp(2.25rem, 1.1429rem + 5.5357vw, 10rem);
-  color: rgba(255, 255, 255, 0.5);
 }
 
 /* Ad container */

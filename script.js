@@ -77,5 +77,5 @@ setInterval(
     updateUI();
     return arguments.callee;
   })(),
-  1000
+  1000000
 );

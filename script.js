@@ -10,7 +10,7 @@ function getCurrentWeekCount() {
   const firstDateOfYear = new Date(new Date().getFullYear(), 0, 1);
   const currentDate = new Date();
   return Math.ceil(
-    ((currentDate - firstDateOfYear) / (1000 * 60 * 60 * 24)).toFixed(0) / 7
+    ((currentDate - firstDateOfYear) / (1000 * 60 * 60 * 24)).toFixed(5) / 7
   );
 }
 

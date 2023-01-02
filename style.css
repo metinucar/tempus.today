@@ -133,7 +133,7 @@ body {
 }
 
 .details-container .day-count::after {
-  content: "Day(s)";
+  content: "Days";
 }
 
 .details-container .week-count::after {

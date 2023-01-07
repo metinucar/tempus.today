@@ -7,11 +7,16 @@ function getCurrentDayCount() {
 }
 
 function getCurrentWeekCount() {
-  const firstDateOfYear = new Date(new Date().getFullYear(), 0, 1);
   const currentDate = new Date();
-  return Math.ceil(
-    ((currentDate - firstDateOfYear) / (1000 * 60 * 60 * 24)).toFixed(5) / 7
-  );
+  let tdt = new Date(currentDate.valueOf());
+  let dayn = (currentDate.getDay() + 6) % 7;
+  tdt.setDate(tdt.getDate() - dayn + 3);
+  let firstThursday = tdt.valueOf();
+  tdt.setMonth(0, 1);
+  if (tdt.getDay() !== 4) {
+    tdt.setMonth(0, 1 + ((4 - tdt.getDay() + 7) % 7));
+  }
+  return 1 + Math.ceil((firstThursday - tdt) / 604800000);
 }
 
 function getCurrentProgress() {
@@ -36,10 +41,16 @@ function updateUI() {
 
   // Percentage progress
   const percent = getCurrentProgress();
+  const percentPrefix = percent.split(".")[0];
+  const percentSuffix = percent.split(".")[1];
   const barItem = document.getElementsByClassName("bar")[0];
   barItem.style.width = `${percent}%`;
-  const counterItem = document.getElementsByClassName("value-number")[0];
-  counterItem.textContent = `${percent}`;
+
+  const counterItemPrefix = document.getElementsByClassName("value-prefix")[0];
+  counterItemPrefix.textContent = `${percentPrefix}`;
+
+  const counterItemSuffix = document.getElementsByClassName("value-suffix")[0];
+  counterItemSuffix.textContent = `${percentSuffix}`;
 
   // Year
   const currentYear = new Date().getFullYear();

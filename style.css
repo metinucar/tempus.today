@@ -224,7 +224,7 @@ footer a {
 
 @media (hover: hover) and (pointer: fine) {
   .progress {
-    height: 33vh;
+    height: 40vh;
   }
 
   .details-container > div {
